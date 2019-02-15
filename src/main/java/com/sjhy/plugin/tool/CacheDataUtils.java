@@ -1,7 +1,6 @@
 package com.sjhy.plugin.tool;
 
 import com.intellij.database.psi.DbTable;
-import lombok.Data;
 
 import java.util.List;
 
@@ -12,7 +11,6 @@ import java.util.List;
  * @version 1.0.0
  * @since 2018/07/17 13:10
  */
-@Data
 public class CacheDataUtils {
     private volatile static CacheDataUtils cacheDataUtils;
 
@@ -41,4 +39,20 @@ public class CacheDataUtils {
      * 所有选中的表
      */
     private List<DbTable> dbTableList;
+
+    public DbTable getSelectDbTable() {
+        return selectDbTable;
+    }
+
+    public void setSelectDbTable(DbTable selectDbTable) {
+        this.selectDbTable = selectDbTable;
+    }
+
+    public List<DbTable> getDbTableList() {
+        return dbTableList;
+    }
+
+    public void setDbTableList(List<DbTable> dbTableList) {
+        this.dbTableList = dbTableList;
+    }
 }

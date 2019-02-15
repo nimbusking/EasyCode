@@ -12,7 +12,6 @@ import com.intellij.ui.components.JBList;
 import com.intellij.util.ui.JBUI;
 import com.sjhy.plugin.constants.MsgValue;
 import com.sjhy.plugin.tool.StringUtils;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -28,7 +27,6 @@ import java.util.Objects;
  * @version 1.0.0
  * @since 2018/08/12 22:26
  */
-@Getter
 public abstract class BaseItemSelectPanel<T extends Item> {
     /**
      * 可选面板集合
@@ -276,5 +274,21 @@ public abstract class BaseItemSelectPanel<T extends Item> {
             }
         }
         return null;
+    }
+
+    public List<T> getItemList() {
+        return itemList;
+    }
+
+    public JPanel getLeftPanel() {
+        return leftPanel;
+    }
+
+    public JPanel getRightPanel() {
+        return rightPanel;
+    }
+
+    public JBList<String> getListPanel() {
+        return listPanel;
     }
 }

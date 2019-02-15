@@ -1,7 +1,5 @@
 package com.sjhy.plugin.entity;
 
-import lombok.Data;
-
 import java.util.List;
 
 /**
@@ -11,7 +9,6 @@ import java.util.List;
  * @version 1.0.0
  * @since 2018/07/17 13:10
  */
-@Data
 public class TypeMapperGroup implements AbstractGroup<TypeMapper> {
     /**
      * 分组名称
@@ -21,4 +18,24 @@ public class TypeMapperGroup implements AbstractGroup<TypeMapper> {
      * 元素对象
      */
     private List<TypeMapper> elementList;
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public List<TypeMapper> getElementList() {
+        return this.elementList;
+    }
+
+    @Override
+    public void setElementList(List<TypeMapper> elementList) {
+        this.elementList = elementList;
+    }
 }

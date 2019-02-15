@@ -2,7 +2,6 @@ package com.sjhy.plugin.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.intellij.database.psi.DbTable;
-import lombok.Data;
 
 import java.util.List;
 
@@ -13,7 +12,6 @@ import java.util.List;
  * @version 1.0.0
  * @since 2018/07/17 13:10
  */
-@Data
 public class TableInfo {
     /**
      * 原始对象
@@ -52,4 +50,91 @@ public class TableInfo {
      * 保存的model名称
      */
     private String saveModelName;
+
+    public DbTable getObj() {
+        return obj;
+    }
+
+    public void setObj(DbTable obj) {
+        this.obj = obj;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public List<ColumnInfo> getFullColumn() {
+        return fullColumn;
+    }
+
+    public void setFullColumn(List<ColumnInfo> fullColumn) {
+        this.fullColumn = fullColumn;
+    }
+
+    public List<ColumnInfo> getPkColumn() {
+        return pkColumn;
+    }
+
+    public void setPkColumn(List<ColumnInfo> pkColumn) {
+        this.pkColumn = pkColumn;
+    }
+
+    public List<ColumnInfo> getOtherColumn() {
+        return otherColumn;
+    }
+
+    public void setOtherColumn(List<ColumnInfo> otherColumn) {
+        this.otherColumn = otherColumn;
+    }
+
+    public String getSavePackageName() {
+        return savePackageName;
+    }
+
+    public void setSavePackageName(String savePackageName) {
+        this.savePackageName = savePackageName;
+    }
+
+    public String getSavePath() {
+        return savePath;
+    }
+
+    public void setSavePath(String savePath) {
+        this.savePath = savePath;
+    }
+
+    public String getSaveModelName() {
+        return saveModelName;
+    }
+
+    public void setSaveModelName(String saveModelName) {
+        this.saveModelName = saveModelName;
+    }
+
+    @Override
+    public String toString() {
+        return "TableInfo{" +
+                "obj=" + obj +
+                ", name='" + name + '\'' +
+                ", comment='" + comment + '\'' +
+                ", fullColumn=" + fullColumn +
+                ", pkColumn=" + pkColumn +
+                ", otherColumn=" + otherColumn +
+                ", savePackageName='" + savePackageName + '\'' +
+                ", savePath='" + savePath + '\'' +
+                ", saveModelName='" + saveModelName + '\'' +
+                '}';
+    }
 }

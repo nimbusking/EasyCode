@@ -9,7 +9,6 @@ import com.intellij.util.ExceptionUtil;
 import com.intellij.util.xmlb.XmlSerializerUtil;
 import com.intellij.util.xmlb.annotations.Transient;
 import com.sjhy.plugin.entity.*;
-import lombok.Data;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -23,7 +22,6 @@ import java.util.*;
  * @version 1.0.0
  * @since 2018/07/18 09:33
  */
-@Data
 @State(name = "EasyCodeSetting", storages = @Storage("easy-code-setting.xml"))
 public class Settings implements PersistentStateComponent<Settings> {
     /**
@@ -255,5 +253,93 @@ public class Settings implements PersistentStateComponent<Settings> {
         settings.getGlobalConfigGroupMap().put(newName, oldGlobalConfigGroup);
         // 覆盖
         settings.getGlobalConfigGroupMap().replace(DEFAULT_NAME, globalConfigGroupMap.get(DEFAULT_NAME));
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public Map<String, TemplateGroup> getTemplateGroupMap() {
+        return templateGroupMap;
+    }
+
+    public void setTemplateGroupMap(Map<String, TemplateGroup> templateGroupMap) {
+        this.templateGroupMap = templateGroupMap;
+    }
+
+    public Map<String, GlobalConfigGroup> getGlobalConfigGroupMap() {
+        return globalConfigGroupMap;
+    }
+
+    public void setGlobalConfigGroupMap(Map<String, GlobalConfigGroup> globalConfigGroupMap) {
+        this.globalConfigGroupMap = globalConfigGroupMap;
+    }
+
+    public String getEncode() {
+        return encode;
+    }
+
+    public void setEncode(String encode) {
+        this.encode = encode;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getCurrTypeMapperGroupName() {
+        return currTypeMapperGroupName;
+    }
+
+    public void setCurrTypeMapperGroupName(String currTypeMapperGroupName) {
+        this.currTypeMapperGroupName = currTypeMapperGroupName;
+    }
+
+    public Map<String, TypeMapperGroup> getTypeMapperGroupMap() {
+        return typeMapperGroupMap;
+    }
+
+    public void setTypeMapperGroupMap(Map<String, TypeMapperGroup> typeMapperGroupMap) {
+        this.typeMapperGroupMap = typeMapperGroupMap;
+    }
+
+    public String getCurrTemplateGroupName() {
+        return currTemplateGroupName;
+    }
+
+    public void setCurrTemplateGroupName(String currTemplateGroupName) {
+        this.currTemplateGroupName = currTemplateGroupName;
+    }
+
+    public String getCurrColumnConfigGroupName() {
+        return currColumnConfigGroupName;
+    }
+
+    public void setCurrColumnConfigGroupName(String currColumnConfigGroupName) {
+        this.currColumnConfigGroupName = currColumnConfigGroupName;
+    }
+
+    public Map<String, ColumnConfigGroup> getColumnConfigGroupMap() {
+        return columnConfigGroupMap;
+    }
+
+    public void setColumnConfigGroupMap(Map<String, ColumnConfigGroup> columnConfigGroupMap) {
+        this.columnConfigGroupMap = columnConfigGroupMap;
+    }
+
+    public String getCurrGlobalConfigGroupName() {
+        return currGlobalConfigGroupName;
+    }
+
+    public void setCurrGlobalConfigGroupName(String currGlobalConfigGroupName) {
+        this.currGlobalConfigGroupName = currGlobalConfigGroupName;
     }
 }

@@ -1,7 +1,5 @@
 package com.sjhy.plugin.entity;
 
-import lombok.Data;
-
 import java.util.List;
 
 /**
@@ -11,7 +9,6 @@ import java.util.List;
  * @version 1.0.0
  * @since 2018/07/18 09:33
  */
-@Data
 public class ColumnConfigGroup implements AbstractGroup<ColumnConfig> {
     /**
      * 分组名称
@@ -21,4 +18,32 @@ public class ColumnConfigGroup implements AbstractGroup<ColumnConfig> {
      * 元素对象
      */
     private List<ColumnConfig> elementList;
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public List<ColumnConfig> getElementList() {
+        return this.elementList;
+    }
+
+    @Override
+    public void setElementList(List<ColumnConfig> elementList) {
+        this.elementList = elementList;
+    }
+
+    @Override
+    public String toString() {
+        return "ColumnConfigGroup{" +
+                "name='" + name + '\'' +
+                ", elementList=" + elementList +
+                '}';
+    }
 }

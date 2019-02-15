@@ -1,8 +1,5 @@
 package com.sjhy.plugin.entity;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 /**
  * 类型隐射信息
  *
@@ -10,8 +7,6 @@ import lombok.NoArgsConstructor;
  * @version 1.0.0
  * @since 2018/07/17 13:10
  */
-@Data
-@NoArgsConstructor
 public class TypeMapper {
     /**
      * 列类型
@@ -25,5 +20,29 @@ public class TypeMapper {
     public TypeMapper(String columnType, String javaType) {
         this.columnType = columnType;
         this.javaType = javaType;
+    }
+
+    public String getColumnType() {
+        return columnType;
+    }
+
+    public void setColumnType(String columnType) {
+        this.columnType = columnType;
+    }
+
+    public String getJavaType() {
+        return javaType;
+    }
+
+    public void setJavaType(String javaType) {
+        this.javaType = javaType;
+    }
+
+    @Override
+    public String toString() {
+        return "TypeMapper{" +
+                "columnType='" + columnType + '\'' +
+                ", javaType='" + javaType + '\'' +
+                '}';
     }
 }

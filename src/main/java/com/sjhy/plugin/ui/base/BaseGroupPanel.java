@@ -11,7 +11,6 @@ import com.intellij.util.ui.JBUI;
 import com.sjhy.plugin.constants.MsgValue;
 import com.sjhy.plugin.config.Settings;
 import com.sjhy.plugin.tool.StringUtils;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -27,7 +26,6 @@ import java.util.Objects;
  * @version 1.0.0
  * @since 2018/08/11 16:27
  */
-@Getter
 public abstract class BaseGroupPanel extends JPanel {
     /**
      * 分组名称
@@ -213,5 +211,13 @@ public abstract class BaseGroupPanel extends JPanel {
         });
 
         return actionGroup;
+    }
+
+    public List<String> getGroupNameList() {
+        return groupNameList;
+    }
+
+    public ComboBox<String> getComboBox() {
+        return comboBox;
     }
 }

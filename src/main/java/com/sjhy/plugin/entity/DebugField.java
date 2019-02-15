@@ -1,7 +1,5 @@
 package com.sjhy.plugin.entity;
 
-import lombok.Data;
-
 /**
  * 调试字段实体类
  *
@@ -9,7 +7,6 @@ import lombok.Data;
  * @version 1.0.0
  * @since 2018/09/03 11:09
  */
-@Data
 public class DebugField {
     /**
      * 字段名
@@ -23,4 +20,37 @@ public class DebugField {
      * 字段值
      */
     private String value;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Class<?> getType() {
+        return type;
+    }
+
+    public void setType(Class<?> type) {
+        this.type = type;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return "DebugField{" +
+                "name='" + name + '\'' +
+                ", type=" + type +
+                ", value='" + value + '\'' +
+                '}';
+    }
 }
