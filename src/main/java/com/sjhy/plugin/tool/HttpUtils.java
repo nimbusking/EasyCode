@@ -40,9 +40,9 @@ public final class HttpUtils {
      */
     private static final String CONTENT_TYPE = "application/json;charset=UTF-8";
     /**
-     * 服务器地址
+     * 远程调用URL
      */
-    private static final String HOST_URL = "http://www.shujuhaiyang.com/easyCode";
+    private static final String HOST_URL = "http://localhost";
     /**
      * http客户端
      */
