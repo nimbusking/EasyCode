@@ -133,7 +133,9 @@ public class MainSetting implements Configurable, Configurable.Composite {
             if (token == null) {
                 return;
             }
-            String result = HttpUtils.get(String.format("/template?token=%s", token));
+            // TODO 模板远程导入数据弃用，改用本地数据解析
+            String result = null;
+//            String result = HttpUtils.get(String.format("/template?token=%s", token));
             if (result == null) {
                 return;
             }
@@ -223,8 +225,9 @@ public class MainSetting implements Configurable, Configurable.Composite {
                         globalConfig.put(selectedItem, settings.getGlobalConfigGroupMap().get(selectedItem));
                     }
                     param.put(StrState.GLOBAL_CONFIG, globalConfig);
-                    // 上传数据
-                    String result = HttpUtils.postJson("/template", param);
+                    // TODO 模板导出上传数据，待修改其它实现方式：主要存储本地
+//                    String result = HttpUtils.postJson("/template", param);
+                    String result = "临时导出成功";
                     // 关闭并退出
                     dialogWrapper.close(DialogWrapper.OK_EXIT_CODE);
                     if (result != null) {
